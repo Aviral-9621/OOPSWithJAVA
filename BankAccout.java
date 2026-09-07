@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+class BankAccount {
+
+    int accountNumber;
+    String accountHolderName;
+    double balance;
+
+
+    void deposit(double amount) {
+        balance = balance + amount;
+        System.out.println("Amount deposited successfully.");
+    }
+
+
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance = balance - amount;
+            System.out.println("Amount withdrawn successfully.");
+        } else {
+            System.out.println("Insufficient balance.");
+        }
+    }
+
+    void displayBalance() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder: " + accountHolderName);
+        System.out.println("Balance: " + balance);
+    }
+}
+
+public class BankAccout{
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        BankAccount b = new BankAccount();
+
+        System.out.print("Enter account number: ");
+        b.accountNumber = sc.nextInt();
+
+        sc.nextLine();
+
+        System.out.print("Enter account holder name: ");
+        b.accountHolderName = sc.nextLine();
+
+        System.out.print("Enter balance: ");
+        b.balance = sc.nextDouble();
+
+        System.out.print("Enter deposit amount: ");
+        double d = sc.nextDouble();
+        b.deposit(d);
+
+        System.out.print("Enter withdraw amount: ");
+        double w = sc.nextDouble();
+        b.withdraw(w);
+
+        System.out.println("\n--- Account Details ---");
+        b.displayBalance();
+
+        sc.close();
+    }
+}
+    
+}
