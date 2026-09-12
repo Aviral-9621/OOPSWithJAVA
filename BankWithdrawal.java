@@ -13,17 +13,17 @@ class BankWithdrawal {
             System.out.print("Enter withdrawal amount: ");
             double amount = sc.nextDouble();
 
-            // Invalid withdrawal amount
+            
             if (amount <= 0) {
                 throw new Exception("Invalid withdrawal amount");
             }
 
-            // Insufficient balance
+            
             if (amount > balance) {
                 throw new Exception("Insufficient balance");
             }
 
-            // Withdrawal successful
+            
             balance = balance - amount;
 
             System.out.println("Withdrawal successful");
@@ -36,7 +36,7 @@ class BankWithdrawal {
 
         } catch (Exception e) {
 
-            // Other exceptions
+            
             System.out.println(e.getMessage());
         }
 
